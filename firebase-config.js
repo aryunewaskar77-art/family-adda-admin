@@ -22,4 +22,3 @@ const db = getFirestore(app);
 
 // Export for use in other files
 export { app, analytics, db };
-/* //test */

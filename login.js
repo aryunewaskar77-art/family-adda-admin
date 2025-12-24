@@ -1,6 +1,16 @@
-// Static Login Credentials
-const VALID_USER_ID = '01122007';
-const VALID_PASSWORD = '02102007';
+// Login Credentials
+const USERS = {
+    chef: {
+        id: 'chef@family.com',
+        password: 'chef321',
+        redirect: 'chef.html'
+    },
+    cashier: {
+        id: 'cash@family.com',
+        password: 'cash321',
+        redirect: 'cashier.html'
+    }
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
@@ -14,12 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const userId = userIdInput.value.trim();
         const password = passwordInput.value.trim();
         
-        // Validate credentials
-        if (userId === VALID_USER_ID && password === VALID_PASSWORD) {
+        // Check credentials against all users
+        let validUser = null;
+        for (const [role, credentials] of Object.entries(USERS)) {
+            if (userId === credentials.id && password === credentials.password) {
+                validUser = credentials;
+                break;
+            }
+        }
+        
+        if (validUser) {
             // Set login flag in localStorage (persists across refreshes)
             localStorage.setItem('isLoggedIn', 'true');
-            // Successful login - redirect to chef order display
-            window.location.href = 'chef.html';
+            // Successful login - redirect to appropriate page
+            window.location.href = validUser.redirect;
         } else {
             // Show error message
             errorMessage.textContent = 'Invalid User ID or Password. Please try again.';
@@ -46,4 +64,3 @@ document.addEventListener('DOMContentLoaded', function() {
         errorMessage.classList.remove('show');
     });
 });
-/* //test */

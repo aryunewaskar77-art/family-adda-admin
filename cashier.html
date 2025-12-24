@@ -3,22 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chef Order Display</title>
+    <title>Cashier - Order Payment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="chef.css" />
+    <link rel="stylesheet" href="cashier.css" />
   </head>
   <body>
     <div class="container">
       <header class="header">
         <div class="header-content">
           <div>
-            <h1>Chef Order Display</h1>
-            <p class="subtitle">Pending Orders</p>
+            <h1>Cashier - Payment Collection</h1>
+            <p class="subtitle">Ready for Payment</p>
           </div>
           <button id="logoutBtn" class="logout-btn">Logout</button>
         </div>
@@ -29,6 +29,22 @@
       </div>
     </div>
 
-    <script type="module" src="orders.js"></script>
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Payment Collection</h2>
+        </div>
+        <div class="modal-body">
+          <p id="modalMessage"></p>
+        </div>
+        <div class="modal-footer">
+          <button id="confirmBtn" class="confirm-btn">Confirm Payment</button>
+          <button id="cancelBtn" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="cashier-orders.js"></script>
   </body>
 </html>
