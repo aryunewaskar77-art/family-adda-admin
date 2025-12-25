@@ -150,8 +150,9 @@ body {
     color: var(--text-primary);
     font-weight: 500;
     border-bottom: 1px solid #f0f0f0;
-    position: relative;
-    padding-left: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
 }
 
 .items-list li:last-child {
@@ -160,10 +161,10 @@ body {
 
 .items-list li::before {
     content: counter(item-counter) ".";
-    position: absolute;
-    left: 0;
     font-weight: 600;
     color: var(--primary-green);
+    flex-shrink: 0;
+    min-width: 1.5rem;
 }
 
 /* ===== CARD FOOTER ===== */
@@ -219,8 +220,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-content {
@@ -237,6 +243,7 @@ body {
         transform: translateY(50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -317,8 +324,9 @@ body {
     }
 
     .logout-btn {
-        align-self: stretch;
         width: 100%;
+        text-align: center;
+        padding: 0.875rem;
     }
 
     .header h1 {
@@ -336,10 +344,13 @@ body {
 
     .items-list li {
         font-size: 0.95rem;
+        padding: 0.875rem 0;
+        /* Larger touch target */
     }
 
     .modal-content {
         width: 95%;
+        margin: 1rem;
     }
 
     .modal-footer {
