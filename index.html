@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chef Login</title>
+  <title>Family Adda Login</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
   <div class="login-container">
     <div class="login-card">
       <div class="login-header">
-        <h1>Chef Login</h1>
+        <h1>Family Adda Login</h1>
       </div>
 
       <form id="loginForm" class="login-form">
@@ -35,20 +35,7 @@
   </div>
 
   <script src="login.js"></script>
-  <script>
-    // Check for role in query parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const role = urlParams.get('role');
-
-    if (role === 'cashier') {
-      document.title = 'Cashier Login';
-      document.querySelector('.login-header h1').textContent = 'Cashier Login';
-    } else {
-      // Default to Chef Login (already set in HTML, but ensuring consistency)
-      document.title = 'Chef Login';
-      document.querySelector('.login-header h1').textContent = 'Chef Login';
-    }
-  </script>
+</body>
 </body>
 
 </html>
